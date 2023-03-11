@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 rodio = "0.17.1"
 csv = "1.1"
+cursive = "0.20"
