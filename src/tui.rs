@@ -36,3 +36,25 @@ fn evaluate(s: &mut Cursive) {
         }
     }
 }
+
+fn populateVectors(s: &mut Cursive) {
+    // TODO: Return the vectors (and borrow them)
+    let mut cymbal_input_vec: Vec<bool> = Vec::new();
+    let mut kick_input_vec: vec<bool> = vec::new();
+    let mut snare_input_vec: Vec<bool> = Vec::new();
+    for y in 0..16 {
+        for x in 0..3 {
+            s.call_on_name(format!("{}{}", x, y).as_str(), |view: &mut Checkbox| {
+                if x == 0 {
+                    cymbal_input_vec.push(view.is_checked());
+                }
+                if x == 1 {
+                    kick_input_vec.push(view.is_checked());
+                }
+                if x == 2 {
+                    snare_input_vec.push(view.is_checked());
+                }
+            }
+         }
+    }
+}
